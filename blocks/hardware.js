@@ -12,14 +12,13 @@ goog.require('Blockly');
  */
 Blockly.Constants.Logic.HUE = 210;
 
-
 Blockly.Blocks['hardware_pinmode'] = {
   init: function() {
     this.jsonInit({
       "message0": 'set pin %1 as %2 mode',
       "args0": [
         {
-          "type": "field_number",
+          "type": "input_value",
           "name": "PIN",
           "check": "Number"
         },
@@ -50,7 +49,7 @@ Blockly.Blocks['hardware_digitalwrite'] = {
       "message0": 'set digital pin %1 as %2 level',
       "args0": [
         {
-          "type": "field_number",
+          "type": "input_value",
           "name": "PIN",
           "check": "Number"
         },
@@ -78,7 +77,7 @@ Blockly.Blocks['hardware_digitalread'] = {
       "message0": 'read digital pin %1',
       "args0": [
         {
-          "type": "field_number",
+          "type": "input_value",
           "name": "PIN",
           "check": "Number"
         }
@@ -97,7 +96,7 @@ Blockly.Blocks['hardware_analogread'] = {
       "message0": 'read analog pin %1',
       "args0": [
         {
-          "type": "field_number",
+          "type": "input_value",
           "name": "PIN",
           "check": "Number"
         }
@@ -116,7 +115,7 @@ Blockly.Blocks['hardware_pwmgetmaxlevel'] = {
       "message0": 'get max level for pwm %1',
       "args0": [
         {
-          "type": "field_number",
+          "type": "input_value",
           "name": "PIN",
           "check": "Number"
         }
@@ -135,12 +134,12 @@ Blockly.Blocks['hardware_pwmduty2level'] = {
       "message0": 'get corresponding level for pwm %1 and duty %2 %%',
       "args0": [
         {
-          "type": "field_number",
+          "type": "input_value",
           "name": "PIN",
           "check": "Number"
         },
         {
-          "type": "field_number",
+          "type": "input_value",
           "name": "DUTY",
           "check": "Number"
         }
@@ -159,16 +158,17 @@ Blockly.Blocks['hardware_pwmsetlevel'] = {
       "message0": 'set level for pwm %1 as %2',
       "args0": [
         {
-          "type": "field_number",
+          "type": "input_value",
           "name": "PIN",
           "check": "Number"
         },
         {
-          "type": "field_number",
+          "type": "input_value",
           "name": "LEVEL",
           "check": "Number"
         }
       ],
+      "inputsInline": true,   // 不换行
       "previousStatement": null,
       "nextStatement": null,
       "colour": 160,
@@ -184,16 +184,17 @@ Blockly.Blocks['hardware_pwmsetfreq'] = {
       "message0": 'set freq for pwm %1 as %2',
       "args0": [
         {
-          "type": "field_number",
+          "type": "input_value",
           "name": "PIN",
           "check": "Number"
         },
         {
-          "type": "field_number",
+          "type": "input_value",
           "name": "FREQ",
           "check": "Number"
         }
       ],
+      "inputsInline": true,   // 不换行
       "previousStatement": null,
       "nextStatement": null,
       "colour": 160,
@@ -209,21 +210,22 @@ Blockly.Blocks['hardware_pwmset'] = {
       "message0": 'set pwm %1 with freq %2 and level %3',
       "args0": [
         {
-          "type": "field_number",
+          "type": "input_value",
           "name": "PIN",
           "check": "Number"
         },
         {
-          "type": "field_number",
+          "type": "input_value",
           "name": "FREQ",
           "check": "Number"
         },
         {
-          "type": "field_number",
+          "type": "input_value",
           "name": "LEVEL",
           "check": "Number"
         }
       ],
+      "inputsInline": true,   // 不换行
       "previousStatement": null,
       "nextStatement": null,
       "colour": 160,
@@ -239,11 +241,12 @@ Blockly.Blocks['hardware_pwmenable'] = {
       "message0": 'enable pwm %1',
       "args0": [
         {
-          "type": "field_number",
+          "type": "input_value",
           "name": "PIN",
           "check": "Number"
         }
       ],
+      "inputsInline": true,   // 不换行
       "previousStatement": null,
       "nextStatement": null,
       "colour": 160,
@@ -259,11 +262,12 @@ Blockly.Blocks['hardware_pwmdisable'] = {
       "message0": 'disable pwm %1',
       "args0": [
         {
-          "type": "field_number",
+          "type": "input_value",
           "name": "PIN",
           "check": "Number"
         }
       ],
+      "inputsInline": true,   // 不换行
       "previousStatement": null,
       "nextStatement": null,
       "colour": 160,
