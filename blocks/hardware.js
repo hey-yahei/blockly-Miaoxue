@@ -71,6 +71,7 @@ Blockly.Blocks['hardware_digitalwrite'] = {
   }
 };
 
+/* // 两个读引脚模块合并为hardware_readpin模块（2018-05-13）
 Blockly.Blocks['hardware_digitalread'] = {
   init: function() {
     this.jsonInit({
@@ -89,12 +90,38 @@ Blockly.Blocks['hardware_digitalread'] = {
     });
   }
 };
-
 Blockly.Blocks['hardware_analogread'] = {
   init: function() {
     this.jsonInit({
       "message0": 'read analog pin %1',
       "args0": [
+        {
+          "type": "input_value",
+          "name": "PIN",
+          "check": "Number"
+        }
+      ],
+      "output": "Number",
+      "colour": 160,
+      "tooltip": "Returns number of letters in the provided text.",
+      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+    });
+  }
+};
+*/
+Blockly.Blocks['hardware_readpin'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": 'read %1 pin %2',
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "TYPE",
+          "options": [
+            ["Digital", "digital_read"],
+            ["Analog", "analog_read"]
+          ]
+        },
         {
           "type": "input_value",
           "name": "PIN",
@@ -152,6 +179,7 @@ Blockly.Blocks['hardware_pwmduty2level'] = {
   }
 };
 
+/* // 丢弃单独的占空比、频率设置模块；统一使用hardware_set模块（2018-05-13）
 Blockly.Blocks['hardware_pwmsetlevel'] = {
   init: function() {
     this.jsonInit({
@@ -177,7 +205,6 @@ Blockly.Blocks['hardware_pwmsetlevel'] = {
     });
   }
 };
-
 Blockly.Blocks['hardware_pwmsetfreq'] = {
   init: function() {
     this.jsonInit({
@@ -203,11 +230,12 @@ Blockly.Blocks['hardware_pwmsetfreq'] = {
     });
   }
 };
+*/
 
 Blockly.Blocks['hardware_pwmset'] = {
   init: function() {
     this.jsonInit({
-      "message0": 'set pwm %1 with freq %2 and level %3',
+      "message0": 'set pwm %1 with freq %2 and %3 %4',
       "args0": [
         {
           "type": "input_value",
@@ -218,6 +246,14 @@ Blockly.Blocks['hardware_pwmset'] = {
           "type": "input_value",
           "name": "FREQ",
           "check": "Number"
+        },
+        {
+          "type": "field_dropdown",
+          "name": "TYPE",
+          "options": [
+            ["level", "level"],
+            ["duty(%)", "duty"]
+          ]
         },
         {
           "type": "input_value",
@@ -256,11 +292,61 @@ Blockly.Blocks['hardware_pwmenable'] = {
   }
 };
 
+/* // 合并pwm的使能和使能模块为hardware_pwmswitch模块（2018-05-13）
 Blockly.Blocks['hardware_pwmdisable'] = {
   init: function() {
     this.jsonInit({
       "message0": 'disable pwm %1',
       "args0": [
+        {
+          "type": "input_value",
+          "name": "PIN",
+          "check": "Number"
+        }
+      ],
+      "inputsInline": true,   // 不换行
+      "previousStatement": null,
+      "nextStatement": null,
+      "colour": 160,
+      "tooltip": "Returns number of letters in the provided text.",
+      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+    });
+  }
+};
+Blockly.Blocks['hardware_pwmenable'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": 'enable pwm %1',
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "PIN",
+          "check": "Number"
+        }
+      ],
+      "inputsInline": true,   // 不换行
+      "previousStatement": null,
+      "nextStatement": null,
+      "colour": 160,
+      "tooltip": "Returns number of letters in the provided text.",
+      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+    });
+  }
+};
+*/
+Blockly.Blocks['hardware_pwmswitch'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": '%1 pwm %2',
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "OP",
+          "options": [
+            ["Enable", "pwm_enable"],
+            ["Disable", "pwm_disable"]
+          ]
+        },
         {
           "type": "input_value",
           "name": "PIN",
