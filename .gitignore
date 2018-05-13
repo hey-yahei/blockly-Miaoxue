@@ -5,6 +5,7 @@ npm-debug.log
 .project
 *.pyc
 *.komodoproject
+*.baiduyun.uploading.cfg
 /nbproject/private/
 
 tests/compile/main_compressed.js
