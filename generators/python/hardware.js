@@ -4,7 +4,10 @@ goog.provide('Blockly.Python.hardware');
 
 goog.require('Blockly.Python');
 
+
+
 Blockly.Python['hardware_pinmode'] = function(block) {
+    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
     var arg1 = block.getField('PIN') ? 
                 String(parseInt(block.getFieldValue('PIN'), 10)) : 
                 Blockly.Python.valueToCode(block, 'PIN', Blockly.Python.ORDER_NONE) || '0';
@@ -13,6 +16,7 @@ Blockly.Python['hardware_pinmode'] = function(block) {
 };
 
 Blockly.Python['hardware_digitalwrite'] = function(block) {
+    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
     var arg1 = block.getField('PIN') ? 
                 String(parseInt(block.getFieldValue('PIN'), 10)) : 
                 Blockly.Python.valueToCode(block, 'PIN', Blockly.Python.ORDER_NONE) || '0';
@@ -35,6 +39,7 @@ Blockly.Python['hardware_analogread'] = function(block) {
 };
 */
 Blockly.Python['hardware_readpin'] = function(block) {
+    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
     var arg1 = block.getFieldValue('TYPE');
     var arg2 = block.getField('PIN') ? 
                 String(parseInt(block.getFieldValue('PIN'), 10)) : 
@@ -43,6 +48,7 @@ Blockly.Python['hardware_readpin'] = function(block) {
 };
 
 Blockly.Python['hardware_pwmgetmaxlevel'] = function(block) {
+    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
     var arg1 = block.getField('PIN') ? 
                 String(parseInt(block.getFieldValue('PIN'), 10)) : 
                 Blockly.Python.valueToCode(block, 'PIN', Blockly.Python.ORDER_NONE) || '0';
@@ -50,6 +56,7 @@ Blockly.Python['hardware_pwmgetmaxlevel'] = function(block) {
 };
 
 Blockly.Python['hardware_pwmduty2level'] = function(block) {
+    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
     var arg1 = block.getField('PIN') ? 
                 String(parseInt(block.getFieldValue('PIN'), 10)) : 
                 Blockly.Python.valueToCode(block, 'PIN', Blockly.Python.ORDER_NONE) || '0';
@@ -81,6 +88,7 @@ Blockly.Python['hardware_pwmsetfreq'] = function(block) {
 */
 
 Blockly.Python['hardware_pwmset'] = function(block) {
+    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
     var arg1 = block.getField('PIN') ? 
                 String(parseInt(block.getFieldValue('PIN'), 10)) : 
                 Blockly.Python.valueToCode(block, 'PIN', Blockly.Python.ORDER_NONE) || '0';
@@ -113,6 +121,7 @@ Blockly.Python['hardware_pwmdisable'] = function(block) {
 };
 */
 Blockly.Python['hardware_pwmswitch'] = function(block) {
+    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
     var arg1 = block.getFieldValue('OP');
     var arg2 = block.getField('PIN') ? 
                 String(parseInt(block.getFieldValue('PIN'), 10)) : 
