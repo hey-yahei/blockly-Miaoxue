@@ -17,5 +17,5 @@
     ```
    
 界面如下：    
-![](blob/master/demos/demo_blocks.png)      
-![](blob/master/demos/demo_code.png)      
+![](raw/master/demos/demo_blocks.png)      
+![](raw/master/demos/demo_code.png)      
