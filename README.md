@@ -1,6 +1,7 @@
-# blockly-Miaoxue（未完成）
-基于google的blockly定制；       
-主要增加pcduino硬件控制相关的模块      
+# blockly-Miaoxue（beta）
+基于google的blockly定制，用于python的可视化编程；       
+主要增加pcduino硬件控制相关的模块，借助bottle框架直接运行程序显示结果；     
+   
   
 1. 安装第三方库：     
     ```
