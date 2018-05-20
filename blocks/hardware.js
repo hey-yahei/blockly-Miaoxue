@@ -6,6 +6,28 @@ goog.provide('Blockly.Constants.Hardware');
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
+Blockly.Blocks['hardware_digitalvalue'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": '%1',
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "VALUE",
+          "options": [
+            ["%{BKY_HARDWARE_HIGH}", "HIGH"],
+            ["%{BKY_HARDWARE_LOW}", "LOW"],
+          ]
+        }
+      ],
+      "output": "Boolean",
+      "colour": 360,
+      "tooltip": "Returns number of letters in the provided text.",
+      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+    });
+  }
+};
+
 Blockly.Blocks['hardware_pinmode'] = {
   init: function() {
     this.jsonInit({

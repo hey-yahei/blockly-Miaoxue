@@ -4,7 +4,11 @@ goog.provide('Blockly.Python.hardware');
 
 goog.require('Blockly.Python');
 
-
+Blockly.Python['hardware_digitalvalue'] = function(block) {
+    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+    var arg1 = block.getFieldValue('VALUE');
+    return [arg1, Blockly.Python.ORDER_ATOMIC]
+};
 
 Blockly.Python['hardware_pinmode'] = function(block) {
     Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
