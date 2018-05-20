@@ -5,6 +5,7 @@ from bottle import route, static_file, run, template, request
 import subprocess
 from threading import Thread, Lock
 import platform
+import webbrowser
 
 coding = 'gbk' if platform.system() == "Windows" else 'utf-8'
 
@@ -40,4 +41,5 @@ def do_run():
 # def get_running_status():
 #     return str( p.wait(0.1) )
 
+webbrowser.open("http://localhost:1234")
 run(host='localhost', port=1234, debug=True)
