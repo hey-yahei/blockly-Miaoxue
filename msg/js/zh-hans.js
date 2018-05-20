@@ -430,6 +430,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.VARIABLES_DYNAMIC_HUE = "310";
 
 Blockly.Msg.HARDWARE = "硬件";
+
 Blockly.Msg.HARDWARE_INPUT = "输入";
 Blockly.Msg.HARDWARE_OUTPUT = "输出";
 Blockly.Msg.HARDWARE_HIGH = "高";
@@ -438,6 +439,9 @@ Blockly.Msg.HARDWARE_LEVEL = "占空比等级";
 Blockly.Msg.HARDWARE_DUTY = "占空比";
 Blockly.Msg.HARDWARE_ENABLE = "使能";
 Blockly.Msg.HARDWARE_DISABLE = "失能";
+Blockly.Msg.HARDWARE_SERIAL_IN = "输入缓冲区";
+Blockly.Msg.HARDWARE_SERIAL_OUT = "输出缓冲区";
+
 Blockly.Msg.HARDWARE_PINMODE ="将数字引脚 %1 设置为 %2 模式";
 Blockly.Msg.HARDWARE_DIGITALWRITE ="将数字引脚 %1 设置为 %2 电平";
 Blockly.Msg.HARDWARE_DIGITALREAD = "读取数字引脚 %1 的状态";
@@ -446,3 +450,11 @@ Blockly.Msg.HARDWARE_PWMGETMAXLEVEL = "获取pwm %1 的最大占空比等级";
 Blockly.Msg.HARDWARE_PWMDUTY2LEVEL = "获取pwm %1 占空比 %2 %% 的对应占空比等级";
 Blockly.Msg.HARDWARE_PWM_SET = "设置pwm %1 ，频率为 %2， %3 为 %4";
 Blockly.Msg.HARDWARE_PWM_SWITCH = "%1 pwm %2";
+Blockly.Msg.HARDWARE_SERIAL_INIT = "初始化串口并将波特率设置为 %1";
+Blockly.Msg.HARDWARE_SERIAL_READSTRING = "从串口读取 %1 字节文本";
+Blockly.Msg.HARDWARE_SERIAL_READBYTES = "从串口读取 %1 字节二进制数据";
+Blockly.Msg.HARDWARE_SERIAL_READALL = "从串口读取所有文本";
+Blockly.Msg.HARDWARE_SERIAL_WRITESTRING = "向串口写入文本 %1";
+Blockly.Msg.HARDWARE_SERIAL_WRITEBYTES = "向串口写入 %2 字节二进制数据 %1 ";
+Blockly.Msg.HARDWARE_SERIAL_CLEAR = "清除串口 %1";
+Blockly.Msg.HARDWARE_SERIAL_GET_BUFFER_LENGTH = "获取串口 %1 的当前队列长度";

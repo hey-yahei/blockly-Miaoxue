@@ -139,3 +139,77 @@ Blockly.Python['hardware_pwmswitch'] = function(block) {
                 Blockly.Python.valueToCode(block, 'PIN', Blockly.Python.ORDER_NONE) || '0';
     return arg1 + "(" + arg2  + ")\n";
 };
+
+Blockly.Python['hardware_serialinit'] = function(block) {
+    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+
+    var arg1 = block.getField('BAUD') ? 
+                String(parseInt(block.getFieldValue('BAUD'), 10)) : 
+                Blockly.Python.valueToCode(block, 'BAUD', Blockly.Python.ORDER_NONE) || '0';
+    Blockly.Python.definitions_["serial"] = "pcduino_serial = Serial(" + arg1 + ")";
+
+    return "";
+};
+
+Blockly.Python['hardware_serialreadstring'] = function(block) {
+    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+
+    var arg1 = block.getField('LEN') ? 
+                String(parseInt(block.getFieldValue('LEN'), 10)) : 
+                Blockly.Python.valueToCode(block, 'LEN', Blockly.Python.ORDER_NONE) || '0';
+
+    return ["pcduino_serial.read_string(" + arg1 + ")", Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['hardware_serialreadbytes'] = function(block) {
+    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+
+    var arg1 = block.getField('LEN') ? 
+                String(parseInt(block.getFieldValue('LEN'), 10)) : 
+                Blockly.Python.valueToCode(block, 'LEN', Blockly.Python.ORDER_NONE) || '0';
+
+    return ["pcduino_serial.read_bytes(" + arg1 + ")", Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['hardware_serialreadall'] = function(block) {
+    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+
+    return ["pcduino_serial.read_all()", Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['hardware_serialwritestring'] = function(block) {
+    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+    var arg1 = block.getField('STRING') ? 
+                String(parseInt(block.getFieldValue('STRING'), 10)) : 
+                Blockly.Python.valueToCode(block, 'STRING', Blockly.Python.ORDER_NONE) || '0';
+
+    return "pcduino_serial.write_string(" + arg1 + ")\n";
+};
+
+Blockly.Python['hardware_serialwritebytes'] = function(block) {
+    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+    var arg1 = block.getField('DATA') ? 
+                String(parseInt(block.getFieldValue('DATA'), 10)) : 
+                Blockly.Python.valueToCode(block, 'DATA', Blockly.Python.ORDER_NONE) || '0';
+    var arg2 = block.getField('LEN') ? 
+                String(parseInt(block.getFieldValue('LEN'), 10)) : 
+                Blockly.Python.valueToCode(block, 'LEN', Blockly.Python.ORDER_NONE) || '0';
+
+    return "pcduino_serial.write_bytes(" + arg1 + ", " + arg2 + ")\n";
+};
+
+Blockly.Python['hardware_serialclear'] = function(block) {
+    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+
+    var arg1 = block.getFieldValue('TYPE');
+
+    return "pcduino_serial." + arg1 + "()\n";
+}
+
+Blockly.Python['hardware_serialgetbufferlength'] = function(block) {
+    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+
+    var arg1 = block.getFieldValue('TYPE');
+
+    return ["pcduino_serial." + arg1 + "()", Blockly.Python.ORDER_ATOMIC];
+}

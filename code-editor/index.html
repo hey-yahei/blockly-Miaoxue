@@ -436,6 +436,49 @@
           </shadow>
         </value>
       </block>
+      <block type="hardware_serialinit">
+        <value name="BAUD">
+          <shadow type="math_number">
+            <field name="NUM">9600</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="hardware_serialreadstring">
+        <value name="LEN">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="hardware_serialreadbytes">
+        <value name="LEN">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="hardware_serialreadall"></block>
+      <block type="hardware_serialwritestring">
+        <value name="STRING">
+          <shadow type="text">
+            <field name="TEXT">abc</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="hardware_serialwritebytes">
+        <value name="DATA">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="LEN">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="hardware_serialclear"></block>
+      <block type="hardware_serialgetbufferlength"></block>
     </category>
   </xml>
 </body>

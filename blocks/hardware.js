@@ -368,3 +368,171 @@ Blockly.Blocks['hardware_pwmswitch'] = {
     });
   }
 };
+
+Blockly.Blocks['hardware_serialinit'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": '%{BKY_HARDWARE_SERIAL_INIT}',
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "BAUD",
+          "check": "Number"
+        },
+      ],
+      "inputsInline": true,   // 不换行
+      "previousStatement": null,
+      "nextStatement": null,
+      "colour": 360,
+      "tooltip": "Returns number of letters in the provided text.",
+      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+    });
+  }
+};
+
+Blockly.Blocks['hardware_serialreadstring'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": '%{BKY_HARDWARE_SERIAL_READSTRING}',
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "LEN",
+          "check": "Number"
+        }
+      ],
+      "inputsInline": true,   // 不换行
+      "output": "String",
+      "colour": 360,
+      "tooltip": "Returns number of letters in the provided text.",
+      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+    });
+  }
+};
+
+Blockly.Blocks['hardware_serialreadbytes'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": '%{BKY_HARDWARE_SERIAL_READBYTES}',
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "LEN",
+          "check": "Number"
+        }
+      ],
+      "inputsInline": true,   // 不换行
+      "output": "Number",
+      "colour": 360,
+      "tooltip": "Returns number of letters in the provided text.",
+      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+    });
+  }
+};
+
+Blockly.Blocks['hardware_serialreadall'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": '%{BKY_HARDWARE_SERIAL_READALL}',
+      "inputsInline": true,   // 不换行
+      "output": "String",
+      "colour": 360,
+      "tooltip": "Returns number of letters in the provided text.",
+      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+    });
+  }
+};
+
+Blockly.Blocks['hardware_serialwritestring'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": '%{BKY_HARDWARE_SERIAL_WRITESTRING}',
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "STRING",
+          "check": "String"
+        }
+      ],
+      "inputsInline": true,   // 不换行
+      "previousStatement": null,
+      "nextStatement": null,
+      "colour": 360,
+      "tooltip": "Returns number of letters in the provided text.",
+      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+    });
+  }
+};
+
+Blockly.Blocks['hardware_serialwritebytes'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": '%{BKY_HARDWARE_SERIAL_WRITEBYTES}',
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "DATA",
+          "check": "Number"
+        },
+        {
+          "type": "input_value",
+          "name": "LEN",
+          "check": "Number"
+        }
+      ],
+      "inputsInline": true,   // 不换行
+      "previousStatement": null,
+      "nextStatement": null,
+      "colour": 360,
+      "tooltip": "Returns number of letters in the provided text.",
+      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+    });
+  }
+};
+
+Blockly.Blocks['hardware_serialclear'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": '%{BKY_HARDWARE_SERIAL_CLEAR}',
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "TYPE",
+          "options": [
+            ["%{BKY_HARDWARE_SERIAL_IN}", "in_flush"],
+            ["%{BKY_HARDWARE_SERIAL_OUT}", "out_flush"]
+          ]
+        }
+      ],
+      "inputsInline": true,   // 不换行
+      "previousStatement": null,
+      "nextStatement": null,
+      "colour": 360,
+      "tooltip": "Returns number of letters in the provided text.",
+      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+    });
+  }
+};
+
+Blockly.Blocks['hardware_serialgetbufferlength'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": '%{BKY_HARDWARE_SERIAL_GET_BUFFER_LENGTH}',
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "TYPE",
+          "options": [
+            ["%{BKY_HARDWARE_SERIAL_IN}", "in_waiting"],
+            ["%{BKY_HARDWARE_SERIAL_OUT}", "out_waiting"]
+          ]
+        }
+      ],
+      "inputsInline": true,   // 不换行
+      "output": "Number",
+      "colour": 360,
+      "tooltip": "Returns number of letters in the provided text.",
+      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+    });
+  }
+};

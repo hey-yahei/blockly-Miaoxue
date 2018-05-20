@@ -430,14 +430,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.VARIABLES_DYNAMIC_HUE = "310";
 
 Blockly.Msg.HARDWARE = "Hardware";
-Blockly.Msg.HARDWARE_PINMODE ="set digital pin %1 as %2 mode";
-Blockly.Msg.HARDWARE_DIGITALWRITE ="set digital pin %1 as %2 level";
-Blockly.Msg.HARDWARE_DIGITALREAD = "read digital pin %1";
-Blockly.Msg.HARDWARE_ANALOGREAD = "read analog pin %1";
-Blockly.Msg.HARDWARE_PWMGETMAXLEVEL = "get max level for pwm %1";
-Blockly.Msg.HARDWARE_PWMDUTY2LEVEL = "get corresponding level for pwm %1 and duty %2 %%";
-Blockly.Msg.HARDWARE_PWM_SET = "set pwm %1 with freq %2 and %3 %4";
-Blockly.Msg.HARDWARE_PWM_SWITCH = "%1 pwm %2";
+
 Blockly.Msg.HARDWARE_INPUT = "INPUT";
 Blockly.Msg.HARDWARE_OUTPUT = "OUTPUT";
 Blockly.Msg.HARDWARE_HIGH = "HIGH";
@@ -446,3 +439,22 @@ Blockly.Msg.HARDWARE_LEVEL = "level";
 Blockly.Msg.HARDWARE_DUTY = "duty";
 Blockly.Msg.HARDWARE_ENABLE = "Enable";
 Blockly.Msg.HARDWARE_DISABLE = "Disable";
+Blockly.Msg.HARDWARE_SERIAL_IN = "in-buffer";
+Blockly.Msg.HARDWARE_SERIAL_OUT = "out-buffer";
+
+Blockly.Msg.HARDWARE_PINMODE ="set digital pin %1 as %2 mode";
+Blockly.Msg.HARDWARE_DIGITALWRITE ="set digital pin %1 as %2 level";
+Blockly.Msg.HARDWARE_DIGITALREAD = "read digital pin %1";
+Blockly.Msg.HARDWARE_ANALOGREAD = "read analog pin %1";
+Blockly.Msg.HARDWARE_PWMGETMAXLEVEL = "get max level for pwm %1";
+Blockly.Msg.HARDWARE_PWMDUTY2LEVEL = "get corresponding level for pwm %1 and duty %2 %%";
+Blockly.Msg.HARDWARE_PWM_SET = "set pwm %1 with freq %2 and %3 %4";
+Blockly.Msg.HARDWARE_PWM_SWITCH = "%1 pwm %2";
+Blockly.Msg.HARDWARE_SERIAL_INIT = "initialize serial with baud %1";
+Blockly.Msg.HARDWARE_SERIAL_READSTRING = "read %1 bytes text data from Serial";
+Blockly.Msg.HARDWARE_SERIAL_READBYTES = "read %1 bytes binary data from Serial";
+Blockly.Msg.HARDWARE_SERIAL_READALL = "read all texts from Serial";
+Blockly.Msg.HARDWARE_SERIAL_WRITESTRING = "write texts %1 to Serial";
+Blockly.Msg.HARDWARE_SERIAL_WRITEBYTES = "write binary data %1 with %2 bytes to Serial";
+Blockly.Msg.HARDWARE_SERIAL_CLEAR = "clear %1 for Serial";
+Blockly.Msg.HARDWARE_SERIAL_GET_BUFFER_LENGTH = "get length of %1 for Serial";
