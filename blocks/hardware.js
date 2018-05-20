@@ -103,19 +103,30 @@ Blockly.Blocks['hardware_analogread'] = {
   }
 };
 */
-Blockly.Blocks['hardware_readpin'] = {
+Blockly.Blocks['hardware_digitalread'] = {
   init: function() {
     this.jsonInit({
-      "message0": '%{BKY_HARDWARE_READPIN}',
+      "message0": '%{BKY_HARDWARE_DIGITALREAD}',
       "args0": [
         {
-          "type": "field_dropdown",
-          "name": "TYPE",
-          "options": [
-            ["%{BKY_HARDWARE_DIGITAL}", "digital_read"],
-            ["%{BKY_HARDWARE_ANALOG}", "analog_read"]
-          ]
-        },
+          "type": "input_value",
+          "name": "PIN",
+          "check": "Number"
+        }
+      ],
+      "output": "Boolean",
+      "colour": 360,
+      "tooltip": "Returns number of letters in the provided text.",
+      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+    });
+  }
+};
+
+Blockly.Blocks['hardware_analogread'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": '%{BKY_HARDWARE_ANALOGREAD}',
+      "args0": [
         {
           "type": "input_value",
           "name": "PIN",

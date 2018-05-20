@@ -38,13 +38,20 @@ Blockly.Python['hardware_analogread'] = function(block) {
     return ["analog_read(" + arg1 + ")", Blockly.Python.ORDER_ATOMIC];
 };
 */
-Blockly.Python['hardware_readpin'] = function(block) {
+Blockly.Python['hardware_digitalread'] = function(block) {
     Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
-    var arg1 = block.getFieldValue('TYPE');
-    var arg2 = block.getField('PIN') ? 
+    var arg1 = block.getField('PIN') ? 
                 String(parseInt(block.getFieldValue('PIN'), 10)) : 
                 Blockly.Python.valueToCode(block, 'PIN', Blockly.Python.ORDER_NONE) || '0';
-    return [arg1 + "(" + arg2 + ")", Blockly.Python.ORDER_ATOMIC];
+    return ["digital_read(" + arg1 + ")", Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['hardware_analogread'] = function(block) {
+    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+    var arg1 = block.getField('PIN') ? 
+                String(parseInt(block.getFieldValue('PIN'), 10)) : 
+                Blockly.Python.valueToCode(block, 'PIN', Blockly.Python.ORDER_NONE) || '0';
+    return ["analog_read(" + arg1 + ")", Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python['hardware_pwmgetmaxlevel'] = function(block) {
