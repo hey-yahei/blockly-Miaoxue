@@ -17,5 +17,5 @@
     ```
    
 界面如下：    
-![](raw/master/demos/demo_blocks.png)      
-![](raw/master/demos/demo_code.png)      
+![](https://raw.githubusercontent.com/hey-yahei/blockly-Miaoxue/master/demos/demo_blocks.png)      
+![](https://raw.githubusercontent.com/hey-yahei/blockly-Miaoxue/master/demos/demo_code.png)      
