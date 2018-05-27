@@ -6,7 +6,7 @@ goog.provide('Blockly.Constants.Hardware');
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
-Blockly.Blocks['hardware_digitalvalue'] = {
+Blockly.Blocks['hardware_digital_value'] = {
   init: function() {
     this.jsonInit({
       "message0": '%1',
@@ -21,17 +21,17 @@ Blockly.Blocks['hardware_digitalvalue'] = {
         }
       ],
       "output": "Boolean",
-      "colour": 360,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "colour": "%{BKY_HARDWARE_COLOUR}",
+      "tooltip": "%{BKY_HARDWARE_DIGITAL_VALUE_TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
 
-Blockly.Blocks['hardware_pinmode'] = {
+Blockly.Blocks['hardware_pin_mode'] = {
   init: function() {
     this.jsonInit({
-      "message0": '%{BKY_HARDWARE_PINMODE}',
+      "message0": '%{BKY_HARDWARE_PIN_MODE}',
       "args0": [
         {
           "type": "input_value",
@@ -52,17 +52,17 @@ Blockly.Blocks['hardware_pinmode'] = {
       "previousStatement": null,
       "nextStatement": null,
       // "output": null,
-      "colour": 360,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "colour": "%{BKY_HARDWARE_COLOUR}",
+      "tooltip": "%{BKY_HARDWARE_PIN_MODE_TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
 
-Blockly.Blocks['hardware_digitalwrite'] = {
+Blockly.Blocks['hardware_digital_write'] = {
   init: function() {
     this.jsonInit({
-      "message0": "%{BKY_HARDWARE_DIGITALWRITE}",
+      "message0": "%{BKY_HARDWARE_DIGITAL_WRITE}",
       "args0": [
         {
           "type": "input_value",
@@ -80,9 +80,9 @@ Blockly.Blocks['hardware_digitalwrite'] = {
       ],
       "previousStatement": null,
       "nextStatement": null,
-      "colour": 360,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "colour": "%{BKY_HARDWARE_COLOUR}",
+      "tooltip": "%{BKY_HARDWARE_DIGITAL_WRITE_TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
@@ -101,8 +101,8 @@ Blockly.Blocks['hardware_digitalread'] = {
       ],
       "output": "Boolean",
       "colour": 160,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "tooltip": "%{BKY_HARDWARE__TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
@@ -119,16 +119,16 @@ Blockly.Blocks['hardware_analogread'] = {
       ],
       "output": "Number",
       "colour": 160,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "tooltip": "%{BKY_HARDWARE__TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
 */
-Blockly.Blocks['hardware_digitalread'] = {
+Blockly.Blocks['hardware_digital_read'] = {
   init: function() {
     this.jsonInit({
-      "message0": '%{BKY_HARDWARE_DIGITALREAD}',
+      "message0": '%{BKY_HARDWARE_DIGITAL_READ}',
       "args0": [
         {
           "type": "input_value",
@@ -137,17 +137,17 @@ Blockly.Blocks['hardware_digitalread'] = {
         }
       ],
       "output": "Boolean",
-      "colour": 360,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "colour": "%{BKY_HARDWARE_COLOUR}",
+      "tooltip": "%{BKY_HARDWARE_DIGITAL_READ_TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
 
-Blockly.Blocks['hardware_analogread'] = {
+Blockly.Blocks['hardware_analog_read'] = {
   init: function() {
     this.jsonInit({
-      "message0": '%{BKY_HARDWARE_ANALOGREAD}',
+      "message0": '%{BKY_HARDWARE_ANALOG_READ}',
       "args0": [
         {
           "type": "input_value",
@@ -156,17 +156,17 @@ Blockly.Blocks['hardware_analogread'] = {
         }
       ],
       "output": "Number",
-      "colour": 360,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "colour": "%{BKY_HARDWARE_COLOUR}",
+      "tooltip": "%{BKY_HARDWARE_ANALOG_READ_TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
 
-Blockly.Blocks['hardware_pwmgetmaxlevel'] = {
+Blockly.Blocks['hardware_pwm_get_max_level'] = {
   init: function() {
     this.jsonInit({
-      "message0": '%{BKY_HARDWARE_PWMGETMAXLEVEL}',
+      "message0": '%{BKY_HARDWARE_PWM_GET_MAX_LEVEL}',
       "args0": [
         {
           "type": "input_value",
@@ -175,17 +175,17 @@ Blockly.Blocks['hardware_pwmgetmaxlevel'] = {
         }
       ],
       "output": "Number",
-      "colour": 360,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "colour": "%{BKY_HARDWARE_COLOUR}",
+      "tooltip": "%{BKY_HARDWARE_PWM_GET_MAX_LEVEL_TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
 
-Blockly.Blocks['hardware_pwmduty2level'] = {
+Blockly.Blocks['hardware_pwm_duty2level'] = {
   init: function() {
     this.jsonInit({
-      "message0": '%{BKY_HARDWARE_PWMDUTY2LEVEL}',
+      "message0": '%{BKY_HARDWARE_PWM_DUTY2LEVEL}',
       "args0": [
         {
           "type": "input_value",
@@ -199,9 +199,9 @@ Blockly.Blocks['hardware_pwmduty2level'] = {
         }
       ],
       "output": "Number",
-      "colour": 360,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "colour": "%{BKY_HARDWARE_COLOUR}",
+      "tooltip": "%{BKY_HARDWARE_PWM_DUTY2LEVEL_TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
@@ -227,8 +227,8 @@ Blockly.Blocks['hardware_pwmsetlevel'] = {
       "previousStatement": null,
       "nextStatement": null,
       "colour": 160,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "tooltip": "%{BKY_HARDWARE__TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
@@ -252,14 +252,14 @@ Blockly.Blocks['hardware_pwmsetfreq'] = {
       "previousStatement": null,
       "nextStatement": null,
       "colour": 160,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "tooltip": "%{BKY_HARDWARE__TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
 */
 
-Blockly.Blocks['hardware_pwmset'] = {
+Blockly.Blocks['hardware_pwm_set'] = {
   init: function() {
     this.jsonInit({
       "message0": '%{BKY_HARDWARE_PWM_SET}',
@@ -291,9 +291,9 @@ Blockly.Blocks['hardware_pwmset'] = {
       "inputsInline": true,   // 不换行
       "previousStatement": null,
       "nextStatement": null,
-      "colour": 360,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "colour": "%{BKY_HARDWARE_COLOUR}",
+      "tooltip": "%{BKY_HARDWARE_PWM_SET_TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
@@ -314,8 +314,8 @@ Blockly.Blocks['hardware_pwmdisable'] = {
       "previousStatement": null,
       "nextStatement": null,
       "colour": 160,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "tooltip": "%{BKY_HARDWARE__TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
@@ -334,13 +334,13 @@ Blockly.Blocks['hardware_pwmenable'] = {
       "previousStatement": null,
       "nextStatement": null,
       "colour": 160,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "tooltip": "%{BKY_HARDWARE__TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
 */
-Blockly.Blocks['hardware_pwmswitch'] = {
+Blockly.Blocks['hardware_pwm_switch'] = {
   init: function() {
     this.jsonInit({
       "message0": '%{BKY_HARDWARE_PWM_SWITCH}',
@@ -362,14 +362,14 @@ Blockly.Blocks['hardware_pwmswitch'] = {
       "inputsInline": true,   // 不换行
       "previousStatement": null,
       "nextStatement": null,
-      "colour": 360,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "colour": "%{BKY_HARDWARE_COLOUR}",
+      "tooltip": "%{BKY_HARDWARE_PWM_SWITCH_TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
 
-Blockly.Blocks['hardware_serialinit'] = {
+Blockly.Blocks['hardware_serial_init'] = {
   init: function() {
     this.jsonInit({
       "message0": '%{BKY_HARDWARE_SERIAL_INIT}',
@@ -383,17 +383,17 @@ Blockly.Blocks['hardware_serialinit'] = {
       "inputsInline": true,   // 不换行
       "previousStatement": null,
       "nextStatement": null,
-      "colour": 360,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "colour": "%{BKY_HARDWARE_COLOUR}",
+      "tooltip": "%{BKY_HARDWARE_SERIAL_INIT_TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
 
-Blockly.Blocks['hardware_serialreadstring'] = {
+Blockly.Blocks['hardware_serial_read_string'] = {
   init: function() {
     this.jsonInit({
-      "message0": '%{BKY_HARDWARE_SERIAL_READSTRING}',
+      "message0": '%{BKY_HARDWARE_SERIAL_READ_STRING}',
       "args0": [
         {
           "type": "input_value",
@@ -403,17 +403,17 @@ Blockly.Blocks['hardware_serialreadstring'] = {
       ],
       "inputsInline": true,   // 不换行
       "output": "String",
-      "colour": 360,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "colour": "%{BKY_HARDWARE_COLOUR}",
+      "tooltip": "%{BKY_HARDWARE_SERIAL_READ_STRING_TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
 
-Blockly.Blocks['hardware_serialreadbytes'] = {
+Blockly.Blocks['hardware_serial_read_bytes'] = {
   init: function() {
     this.jsonInit({
-      "message0": '%{BKY_HARDWARE_SERIAL_READBYTES}',
+      "message0": '%{BKY_HARDWARE_SERIAL_READ_BYTES}',
       "args0": [
         {
           "type": "input_value",
@@ -423,30 +423,30 @@ Blockly.Blocks['hardware_serialreadbytes'] = {
       ],
       "inputsInline": true,   // 不换行
       "output": "Number",
-      "colour": 360,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "colour": "%{BKY_HARDWARE_COLOUR}",
+      "tooltip": "%{BKY_HARDWARE_SERIAL_READ_BYTES_TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
 
-Blockly.Blocks['hardware_serialreadall'] = {
+Blockly.Blocks['hardware_serial_read_all'] = {
   init: function() {
     this.jsonInit({
-      "message0": '%{BKY_HARDWARE_SERIAL_READALL}',
+      "message0": '%{BKY_HARDWARE_SERIAL_READ_ALL}',
       "inputsInline": true,   // 不换行
       "output": "String",
-      "colour": 360,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "colour": "%{BKY_HARDWARE_COLOUR}",
+      "tooltip": "%{BKY_HARDWARE_SERIAL_READ_ALL_TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
 
-Blockly.Blocks['hardware_serialwritestring'] = {
+Blockly.Blocks['hardware_serial_write_string'] = {
   init: function() {
     this.jsonInit({
-      "message0": '%{BKY_HARDWARE_SERIAL_WRITESTRING}',
+      "message0": '%{BKY_HARDWARE_SERIAL_WRITE_STRING}',
       "args0": [
         {
           "type": "input_value",
@@ -457,17 +457,17 @@ Blockly.Blocks['hardware_serialwritestring'] = {
       "inputsInline": true,   // 不换行
       "previousStatement": null,
       "nextStatement": null,
-      "colour": 360,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "colour": "%{BKY_HARDWARE_COLOUR}",
+      "tooltip": "%{BKY_HARDWARE_SEIRAL_WRITE_STRING_TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
 
-Blockly.Blocks['hardware_serialwritebytes'] = {
+Blockly.Blocks['hardware_serial_write_bytes'] = {
   init: function() {
     this.jsonInit({
-      "message0": '%{BKY_HARDWARE_SERIAL_WRITEBYTES}',
+      "message0": '%{BKY_HARDWARE_SERIAL_WRITE_BYTES}',
       "args0": [
         {
           "type": "input_value",
@@ -483,14 +483,14 @@ Blockly.Blocks['hardware_serialwritebytes'] = {
       "inputsInline": true,   // 不换行
       "previousStatement": null,
       "nextStatement": null,
-      "colour": 360,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "colour": "%{BKY_HARDWARE_COLOUR}",
+      "tooltip": "%{BKY_HARDWARE_SERIAL_WRITE_BYTES_TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
 
-Blockly.Blocks['hardware_serialclear'] = {
+Blockly.Blocks['hardware_serial_clear'] = {
   init: function() {
     this.jsonInit({
       "message0": '%{BKY_HARDWARE_SERIAL_CLEAR}',
@@ -507,14 +507,14 @@ Blockly.Blocks['hardware_serialclear'] = {
       "inputsInline": true,   // 不换行
       "previousStatement": null,
       "nextStatement": null,
-      "colour": 360,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "colour": "%{BKY_HARDWARE_COLOUR}",
+      "tooltip": "%{BKY_HARDWARE_SERIAL_CLEAR_TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };
 
-Blockly.Blocks['hardware_serialgetbufferlength'] = {
+Blockly.Blocks['hardware_serial_get_buffer_length'] = {
   init: function() {
     this.jsonInit({
       "message0": '%{BKY_HARDWARE_SERIAL_GET_BUFFER_LENGTH}',
@@ -530,9 +530,9 @@ Blockly.Blocks['hardware_serialgetbufferlength'] = {
       ],
       "inputsInline": true,   // 不换行
       "output": "Number",
-      "colour": 360,
-      "tooltip": "Returns number of letters in the provided text.",
-      "helpUrl": "http://www.w3schools.com/jsref/jsref_length_string.asp"
+      "colour": "%{BKY_HARDWARE_COLOUR}",
+      "tooltip": "%{BKY_HARDWARE_SERIAL_GET_BUFFER_LENGTH_TOOLTIP}",
+      "helpUrl": ""
     });
   }
 };

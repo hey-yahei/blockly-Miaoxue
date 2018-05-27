@@ -10,9 +10,11 @@
   <script src="js/blockly_compressed.js"></script>
   <script src="js/blocks_compressed.js"></script>       <!-- 原始模块 -->
   <script src="js/blocks-hardware.js"></script>         <!-- 自定义模块——硬件Hardware -->
+  <script src="js/blocks-system.js"></script>           <!-- 自定义模块——系统System -->
   <script src="js/javascript_compressed.js"></script>   <!-- js支持 -->
   <script src="js/python_compressed.js"></script>       <!-- 原始python代码生成器 -->
   <script src="js/python-hardware.js"></script>  <!-- 自定义python代码生成器——硬件Hardware -->
+  <script src="js/python-system.js"></script>    <!-- 自定义模块——系统System -->
   <script src="js/code.js"></script>     <!-- 界面相关的模块，包括语言支持 -->
   <script src="js/download.js"></script>   <!-- 文件下载相关，依赖于jquery -->
   <script src="js/run.js"></script>   <!-- python程序运行相关，依赖于jquery -->
@@ -364,44 +366,44 @@
     <sep></sep>
     <category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
     <category name="%{BKY_CATFUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
-    <category name="%{BKY_HARDWARE}" colour="360">
-      <block type="hardware_digitalvalue"></block>
-      <block type="hardware_pinmode">
+    <category name="%{BKY_HARDWARE}" colour="%{BKY_HARDWARE_COLOUR}">
+      <block type="hardware_digital_value"></block>
+      <block type="hardware_pin_mode">
         <value name="PIN">
           <shadow type="math_number">
             <field name="NUM">0</field>
           </shadow>
         </value>
       </block>
-      <block type="hardware_digitalwrite">
+      <block type="hardware_digital_write">
         <value name="PIN">
           <shadow type="math_number">
             <field name="NUM">0</field>
           </shadow>
         </value>
       </block>
-      <block type="hardware_digitalread">
+      <block type="hardware_digital_read">
         <value name="PIN">
           <shadow type="math_number">
             <field name="NUM">0</field>
           </shadow>
         </value>
       </block>
-      <block type="hardware_analogread">
+      <block type="hardware_analog_read">
         <value name="PIN">
           <shadow type="math_number">
             <field name="NUM">0</field>
           </shadow>
         </value>
       </block>
-      <block type="hardware_pwmgetmaxlevel">
+      <block type="hardware_pwm_get_max_level">
         <value name="PIN">
           <shadow type="math_number">
             <field name="NUM">0</field>
           </shadow>
         </value>
       </block>
-      <block type="hardware_pwmduty2level">
+      <block type="hardware_pwm_duty2level">
         <value name="PIN">
           <shadow type="math_number">
             <field name="NUM">0</field>
@@ -413,7 +415,7 @@
           </shadow>
         </value>
       </block>
-      <block type="hardware_pwmset">
+      <block type="hardware_pwm_set">
         <value name="PIN">
           <shadow type="math_number">
             <field name="NUM">0</field>
@@ -430,43 +432,43 @@
           </shadow>
         </value>
       </block>
-      <block type="hardware_pwmswitch">
+      <block type="hardware_pwm_switch">
         <value name="PIN">
           <shadow type="math_number">
             <field name="NUM">0</field>
           </shadow>
         </value>
       </block>
-      <block type="hardware_serialinit">
+      <block type="hardware_serial_init">
         <value name="BAUD">
           <shadow type="math_number">
             <field name="NUM">9600</field>
           </shadow>
         </value>
       </block>
-      <block type="hardware_serialreadstring">
+      <block type="hardware_serial_read_string">
         <value name="LEN">
           <shadow type="math_number">
             <field name="NUM">1</field>
           </shadow>
         </value>
       </block>
-      <block type="hardware_serialreadbytes">
+      <block type="hardware_serial_read_bytes">
         <value name="LEN">
           <shadow type="math_number">
             <field name="NUM">1</field>
           </shadow>
         </value>
       </block>
-      <block type="hardware_serialreadall"></block>
-      <block type="hardware_serialwritestring">
+      <block type="hardware_serial_read_all"></block>
+      <block type="hardware_serial_write_string">
         <value name="STRING">
           <shadow type="text">
             <field name="TEXT">abc</field>
           </shadow>
         </value>
       </block>
-      <block type="hardware_serialwritebytes">
+      <block type="hardware_serial_write_bytes">
         <value name="DATA">
           <shadow type="math_number">
             <field name="NUM">0</field>
@@ -478,8 +480,18 @@
           </shadow>
         </value>
       </block>
-      <block type="hardware_serialclear"></block>
-      <block type="hardware_serialgetbufferlength"></block>
+      <block type="hardware_serial_clear"></block>
+      <block type="hardware_serial_get_buffer_length"></block>
+    </category>
+    <category name="%{BKY_SYSTEM}" colour="%{BKY_SYSTEM_COLOUR}">
+      <block type="system_get_time"></block>
+      <block type="system_sleep">
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+      </block>
     </category>
   </xml>
 </body>

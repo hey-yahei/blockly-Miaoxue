@@ -430,6 +430,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.VARIABLES_DYNAMIC_HUE = "310";
 
 Blockly.Msg.HARDWARE = "Hardware";
+Blockly.Msg. HARDWARE_COLOUR = "360";
 
 Blockly.Msg.HARDWARE_INPUT = "INPUT";
 Blockly.Msg.HARDWARE_OUTPUT = "OUTPUT";
@@ -442,19 +443,47 @@ Blockly.Msg.HARDWARE_DISABLE = "Disable";
 Blockly.Msg.HARDWARE_SERIAL_IN = "in-buffer";
 Blockly.Msg.HARDWARE_SERIAL_OUT = "out-buffer";
 
-Blockly.Msg.HARDWARE_PINMODE ="set digital pin %1 as %2 mode";
-Blockly.Msg.HARDWARE_DIGITALWRITE ="set digital pin %1 as %2 level";
-Blockly.Msg.HARDWARE_DIGITALREAD = "read digital pin %1";
-Blockly.Msg.HARDWARE_ANALOGREAD = "read analog pin %1";
-Blockly.Msg.HARDWARE_PWMGETMAXLEVEL = "get max level for pwm %1";
-Blockly.Msg.HARDWARE_PWMDUTY2LEVEL = "get corresponding level for pwm %1 and duty %2 %%";
+Blockly.Msg.HARDWARE_PIN_MODE ="set digital pin %1 as %2 mode";
+Blockly.Msg.HARDWARE_DIGITAL_WRITE ="set digital pin %1 as %2 level";
+Blockly.Msg.HARDWARE_DIGITAL_READ = "read digital pin %1";
+Blockly.Msg.HARDWARE_ANALOG_READ = "read analog pin %1";
+Blockly.Msg.HARDWARE_PWM_GET_MAX_LEVEL = "get max level for pwm %1";
+Blockly.Msg.HARDWARE_PWM_DUTY2LEVEL = "get corresponding level for pwm %1 and duty %2 %%";
 Blockly.Msg.HARDWARE_PWM_SET = "set pwm %1 with freq %2 and %3 %4";
 Blockly.Msg.HARDWARE_PWM_SWITCH = "%1 pwm %2";
 Blockly.Msg.HARDWARE_SERIAL_INIT = "initialize serial with baud %1";
-Blockly.Msg.HARDWARE_SERIAL_READSTRING = "read %1 bytes text data from Serial";
-Blockly.Msg.HARDWARE_SERIAL_READBYTES = "read %1 bytes binary data from Serial";
-Blockly.Msg.HARDWARE_SERIAL_READALL = "read all texts from Serial";
-Blockly.Msg.HARDWARE_SERIAL_WRITESTRING = "write texts %1 to Serial";
-Blockly.Msg.HARDWARE_SERIAL_WRITEBYTES = "write binary data %1 with %2 bytes to Serial";
+Blockly.Msg.HARDWARE_SERIAL_READ_STRING = "read %1 bytes text data from Serial";
+Blockly.Msg.HARDWARE_SERIAL_READ_BYTES = "read %1 bytes binary data from Serial";
+Blockly.Msg.HARDWARE_SERIAL_READ_ALL = "read all texts from Serial";
+Blockly.Msg.HARDWARE_SERIAL_WRITE_STRING = "write texts %1 to Serial";
+Blockly.Msg.HARDWARE_SERIAL_WRITE_BYTES = "write binary data %1 with %2 bytes to Serial";
 Blockly.Msg.HARDWARE_SERIAL_CLEAR = "clear %1 for Serial";
 Blockly.Msg.HARDWARE_SERIAL_GET_BUFFER_LENGTH = "get length of %1 for Serial";
+
+Blockly.Msg.HARDWARE_DIGITAL_VALUE_TOOLTIP = "Constant of digital level.";
+Blockly.Msg.HARDWARE_PIN_MODE_TOOLTIP = "Set pin mode for the digital pin.";
+Blockly.Msg.HARDWARE_DIGITAL_WRITE_TOOLTIP = "Set digital level(HIGH or LOW) for the digital pin(should be setted as OUTPUT before).";
+Blockly.Msg.HARDWARE_DIGITAL_READ_TOOLTIP = "Read digital level(HIGH or LOW) from the digital pin(if INPUT, read from outside; if OUTPUT, get the current level that setted before).";
+Blockly.Msg.HARDWARE_ANALOG_READ_TOOLTIP = "Read analog value(if A0 or A1, 0-63; if A1,A2,A3,A4,A5, 0-4095) from the analog pin.";
+Blockly.Msg.HARDWARE_PWM_GET_MAX_LEVEL_TOOLTIP = "Get max level that pwm pin allows. The max level depends on which pin and the freq setted for the pin.";
+Blockly.Msg.HARDWARE_PWM_DUTY2LEVEL_TOOLTIP = "Convert pwm duty to pwm level. It depends on which pin and the freq setted for the pin.";
+Blockly.Msg.HARDWARE_PWM_SET_TOOLTIP = "Set level or freq for pwm. Pwm will be disabled after setting.";
+Blockly.Msg.HARDWARE_PWM_SWITCH_TOOLTIP = "Enable or disable pwm. The digital pin should be setted as PWM before.";
+Blockly.Msg.HARDWARE_SERIAL_INIT_TOOLTIP = "Init the serial. Create the Serial instance and set D0,D1 as UART mode.";
+Blockly.Msg.HARDWARE_SERIAL_READ_STRING_TOOLTIP = "Read several bytes as a string from serial. Serial should be inited before.";
+Blockly.Msg.HARDWARE_SERIAL_READ_BYTES_TOOLTIP = "Read bytes from serial. Serial should be inited before.";
+Blockly.Msg.HARDWARE_SERIAL_READ_ALL_TOOLTIP = "Read all bytes as a string from serial. Serial should be inited before.";
+Blockly.Msg.HARDWARE_SEIRAL_WRITE_STRING_TOOLTIP = "Write a string to serial. Serial should be inited before.";
+Blockly.Msg.HARDWARE_SERIAL_WRITE_BYTES_TOOLTIP = "Write bytes to serial. Serial should be inited before."
+Blockly.Msg.HARDWARE_SERIAL_CLEAR_TOOLTIP = "Clear buffer for serial.";
+Blockly.Msg.HARDWARE_SERIAL_GET_BUFFER_LENGTH_TOOLTIP = "Get the length for the queue of serial buffer.";
+
+
+
+Blockly.Msg.SYSTEM = "System";
+Blockly.Msg.SYSTEM_COLOUR = "50";
+Blockly.Msg.SYSTEM_GET_TIME = "Get current time(s)";
+Blockly.Msg.SYSTEM_SLEEP = "Sleep %1 seconds"
+
+Blockly.Msg.SYSTEM_GET_TIME_TOOLTIP = "Get seconds(decimal) from the year of 1970.";
+Blockly.Msg.SYSTEM_SLEEP_TOOLTIP = "Sleep for several seconds(decimal).";
