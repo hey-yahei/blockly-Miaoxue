@@ -66,5 +66,5 @@ if __name__ == "__main__":
     }
 
     if not args.no_browser:
-        webbrowser.open("http://0.0.0.0:1234")
+        webbrowser.open("http://{}:{}".format(params['host'], params['port']))
     run(**params)
