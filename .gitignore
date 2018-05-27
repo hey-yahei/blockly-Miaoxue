@@ -5,4 +5,5 @@
 *.komodoproject
 *.baiduyun.uploading.cfg
 tmp/*
+static/tmp/*
 
