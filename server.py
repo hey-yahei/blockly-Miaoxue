@@ -5,8 +5,14 @@ from bottle import route, static_file, run, template, request
 import subprocess
 import platform
 import webbrowser
+import os
+import argparse
 
 coding = 'gbk' if platform.system() == "Windows" else 'utf-8'
+
+if not os.path.exists("tmp"):
+    print("create a new directory: tmp")
+    os.mkdir("tmp")
 
 @route("/<filename:path>")
 def static_files(filename):
@@ -21,7 +27,7 @@ def do_run():
     code = request.forms.code
     with open("tmp/code2run.py", "w") as f:
         f.write(code)
-        f.write("\nprint('----------- finished -----------')")
+        f.write("\nprint('----------- End -----------')")
     p = subprocess.Popen('python tmp/code2run.py', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     p.wait()
 
@@ -45,9 +51,20 @@ def download_python_file():
         f.write(code)
     return ""
 
-# @route("/get_running_status")
-# def get_running_status():
-#     return str( p.wait(0.1) )
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--no-browser", action="store_true", help="not open browser")
+    parser.add_argument("-i", "--ip", help="host ip")
+    parser.add_argument("-p", "--port", type=int, help="host port")
+    parser.add_argument("-d", "--debug", action="store_true", help="open debug swith for bottle")
 
-webbrowser.open("http://0.0.0.0:1234")
-run(host='0.0.0.0', port=1234, debug=True)
+    args = parser.parse_args()
+    params = {
+        "host" : args.ip or "localhost",
+        "port" : args.port or 1234,
+        "debug" : args.debug
+    }
+
+    if not args.no_browser:
+        webbrowser.open("http://0.0.0.0:1234")
+    run(**params)
