@@ -49,5 +49,5 @@ def download_python_file():
 # def get_running_status():
 #     return str( p.wait(0.1) )
 
-webbrowser.open("http://localhost:1234")
-run(host='localhost', port=1234, debug=True)
+webbrowser.open("http://0.0.0.0:1234")
+run(host='0.0.0.0', port=1234, debug=True)

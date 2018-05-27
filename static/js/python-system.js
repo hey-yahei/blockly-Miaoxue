@@ -4,7 +4,7 @@ goog.provide('Blockly.Python.system');
 
 goog.require('Blockly.Python');
 
-Blockly.Python['system_gettime'] = function(block) {
+Blockly.Python['system_get_time'] = function(block) {
     Blockly.Python.definitions_["import_time"] = "import time";
 
     return ["time.time()", Blockly.Python.ORDER_ATOMIC]

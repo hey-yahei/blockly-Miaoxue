@@ -4,14 +4,14 @@ goog.provide('Blockly.Python.hardware');
 
 goog.require('Blockly.Python');
 
-Blockly.Python['hardware_digitalvalue'] = function(block) {
-    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+Blockly.Python['hardware_digital_value'] = function(block) {
+    Blockly.Python.definitions_["import_pcduino"] = "from pcduino import *";
     var arg1 = block.getFieldValue('VALUE');
     return [arg1, Blockly.Python.ORDER_ATOMIC]
 };
 
-Blockly.Python['hardware_pinmode'] = function(block) {
-    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+Blockly.Python['hardware_pin_mode'] = function(block) {
+    Blockly.Python.definitions_["import_pcduino"] = "from pcduino import *";
     var arg1 = block.getField('PIN') ? 
                 String(parseInt(block.getFieldValue('PIN'), 10)) : 
                 Blockly.Python.valueToCode(block, 'PIN', Blockly.Python.ORDER_NONE) || '0';
@@ -19,8 +19,8 @@ Blockly.Python['hardware_pinmode'] = function(block) {
     return "pin_mode(" + arg1 + "," + arg2 + ")\n";
 };
 
-Blockly.Python['hardware_digitalwrite'] = function(block) {
-    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+Blockly.Python['hardware_digital_write'] = function(block) {
+    Blockly.Python.definitions_["import_pcduino"] = "from pcduino import *";
     var arg1 = block.getField('PIN') ? 
                 String(parseInt(block.getFieldValue('PIN'), 10)) : 
                 Blockly.Python.valueToCode(block, 'PIN', Blockly.Python.ORDER_NONE) || '0';
@@ -42,32 +42,32 @@ Blockly.Python['hardware_analogread'] = function(block) {
     return ["analog_read(" + arg1 + ")", Blockly.Python.ORDER_ATOMIC];
 };
 */
-Blockly.Python['hardware_digitalread'] = function(block) {
-    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+Blockly.Python['hardware_digital_read'] = function(block) {
+    Blockly.Python.definitions_["import_pcduino"] = "from pcduino import *";
     var arg1 = block.getField('PIN') ? 
                 String(parseInt(block.getFieldValue('PIN'), 10)) : 
                 Blockly.Python.valueToCode(block, 'PIN', Blockly.Python.ORDER_NONE) || '0';
     return ["digital_read(" + arg1 + ")", Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['hardware_analogread'] = function(block) {
-    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+Blockly.Python['hardware_analog_read'] = function(block) {
+    Blockly.Python.definitions_["import_pcduino"] = "from pcduino import *";
     var arg1 = block.getField('PIN') ? 
                 String(parseInt(block.getFieldValue('PIN'), 10)) : 
                 Blockly.Python.valueToCode(block, 'PIN', Blockly.Python.ORDER_NONE) || '0';
     return ["analog_read(" + arg1 + ")", Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['hardware_pwmgetmaxlevel'] = function(block) {
-    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+Blockly.Python['hardware_pwm_get_max_level'] = function(block) {
+    Blockly.Python.definitions_["import_pcduino"] = "from pcduino import *";
     var arg1 = block.getField('PIN') ? 
                 String(parseInt(block.getFieldValue('PIN'), 10)) : 
                 Blockly.Python.valueToCode(block, 'PIN', Blockly.Python.ORDER_NONE) || '0';
     return ["pwm_get_max_level(" + arg1 + ")", Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['hardware_pwmduty2level'] = function(block) {
-    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+Blockly.Python['hardware_pwm_duty2level'] = function(block) {
+    Blockly.Python.definitions_["import_pcduino"] = "from pcduino import *";
     var arg1 = block.getField('PIN') ? 
                 String(parseInt(block.getFieldValue('PIN'), 10)) : 
                 Blockly.Python.valueToCode(block, 'PIN', Blockly.Python.ORDER_NONE) || '0';
@@ -98,8 +98,8 @@ Blockly.Python['hardware_pwmsetfreq'] = function(block) {
 };
 */
 
-Blockly.Python['hardware_pwmset'] = function(block) {
-    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+Blockly.Python['hardware_pwm_set'] = function(block) {
+    Blockly.Python.definitions_["import_pcduino"] = "from pcduino import *";
     var arg1 = block.getField('PIN') ? 
                 String(parseInt(block.getFieldValue('PIN'), 10)) : 
                 Blockly.Python.valueToCode(block, 'PIN', Blockly.Python.ORDER_NONE) || '0';
@@ -131,8 +131,8 @@ Blockly.Python['hardware_pwmdisable'] = function(block) {
     return "pwm_disable(" + arg1  + ")\n";
 };
 */
-Blockly.Python['hardware_pwmswitch'] = function(block) {
-    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+Blockly.Python['hardware_pwm_switch'] = function(block) {
+    Blockly.Python.definitions_["import_pcduino"] = "from pcduino import *";
     var arg1 = block.getFieldValue('OP');
     var arg2 = block.getField('PIN') ? 
                 String(parseInt(block.getFieldValue('PIN'), 10)) : 
@@ -140,8 +140,8 @@ Blockly.Python['hardware_pwmswitch'] = function(block) {
     return arg1 + "(" + arg2  + ")\n";
 };
 
-Blockly.Python['hardware_serialinit'] = function(block) {
-    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+Blockly.Python['hardware_serial_init'] = function(block) {
+    Blockly.Python.definitions_["import_pcduino"] = "from pcduino import *";
 
     var arg1 = block.getField('BAUD') ? 
                 String(parseInt(block.getFieldValue('BAUD'), 10)) : 
@@ -151,8 +151,8 @@ Blockly.Python['hardware_serialinit'] = function(block) {
     return "";
 };
 
-Blockly.Python['hardware_serialreadstring'] = function(block) {
-    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+Blockly.Python['hardware_serial_read_string'] = function(block) {
+    Blockly.Python.definitions_["import_pcduino"] = "from pcduino import *";
 
     var arg1 = block.getField('LEN') ? 
                 String(parseInt(block.getFieldValue('LEN'), 10)) : 
@@ -161,8 +161,8 @@ Blockly.Python['hardware_serialreadstring'] = function(block) {
     return ["pcduino_serial.read_string(" + arg1 + ")", Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['hardware_serialreadbytes'] = function(block) {
-    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+Blockly.Python['hardware_serial_read_bytes'] = function(block) {
+    Blockly.Python.definitions_["import_pcduino"] = "from pcduino import *";
 
     var arg1 = block.getField('LEN') ? 
                 String(parseInt(block.getFieldValue('LEN'), 10)) : 
@@ -171,14 +171,14 @@ Blockly.Python['hardware_serialreadbytes'] = function(block) {
     return ["pcduino_serial.read_bytes(" + arg1 + ")", Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['hardware_serialreadall'] = function(block) {
-    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+Blockly.Python['hardware_serial_read_all'] = function(block) {
+    Blockly.Python.definitions_["import_pcduino"] = "from pcduino import *";
 
     return ["pcduino_serial.read_all()", Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['hardware_serialwritestring'] = function(block) {
-    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+Blockly.Python['hardware_serial_write_string'] = function(block) {
+    Blockly.Python.definitions_["import_pcduino"] = "from pcduino import *";
     var arg1 = block.getField('STRING') ? 
                 String(parseInt(block.getFieldValue('STRING'), 10)) : 
                 Blockly.Python.valueToCode(block, 'STRING', Blockly.Python.ORDER_NONE) || '0';
@@ -186,8 +186,8 @@ Blockly.Python['hardware_serialwritestring'] = function(block) {
     return "pcduino_serial.write_string(" + arg1 + ")\n";
 };
 
-Blockly.Python['hardware_serialwritebytes'] = function(block) {
-    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+Blockly.Python['hardware_serial_write_bytes'] = function(block) {
+    Blockly.Python.definitions_["import_pcduino"] = "from pcduino import *";
     var arg1 = block.getField('DATA') ? 
                 String(parseInt(block.getFieldValue('DATA'), 10)) : 
                 Blockly.Python.valueToCode(block, 'DATA', Blockly.Python.ORDER_NONE) || '0';
@@ -198,16 +198,16 @@ Blockly.Python['hardware_serialwritebytes'] = function(block) {
     return "pcduino_serial.write_bytes(" + arg1 + ", " + arg2 + ")\n";
 };
 
-Blockly.Python['hardware_serialclear'] = function(block) {
-    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+Blockly.Python['hardware_serial_clear'] = function(block) {
+    Blockly.Python.definitions_["import_pcduino"] = "from pcduino import *";
 
     var arg1 = block.getFieldValue('TYPE');
 
     return "pcduino_serial." + arg1 + "()\n";
 }
 
-Blockly.Python['hardware_serialgetbufferlength'] = function(block) {
-    Blockly.Python.definitions_["pcduino"] = "from pcduino import *";
+Blockly.Python['hardware_serial_get_buffer_length'] = function(block) {
+    Blockly.Python.definitions_["import_pcduino"] = "from pcduino import *";
 
     var arg1 = block.getFieldValue('TYPE');
 

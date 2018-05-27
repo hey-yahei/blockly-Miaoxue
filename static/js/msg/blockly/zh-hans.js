@@ -429,6 +429,8 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.COLOUR_HUE = "20";
 /** @export */ Blockly.Msg.VARIABLES_DYNAMIC_HUE = "310";
 
+
+
 Blockly.Msg.HARDWARE = "硬件";
 Blockly.Msg. HARDWARE_COLOUR = "360";
 
