@@ -399,6 +399,9 @@ Code.init = function() {
   Code.bindClick('trashButton',
       function() {Code.discard(); Code.renderContent();});
   Code.bindClick('runButton', Code.runPY);
+  Code.bindClick('downloadPyButton', Code.downloadPY);
+  Code.bindClick('downloadXmlButton', Code.downloadXML);
+  Code.bindClick('uploadXmlButton', Code.uploadXML);
   // Disable the link button if page isn't backed by App Engine storage.
   var linkButton = document.getElementById('linkButton');
   if ('BlocklyStorage' in window) {

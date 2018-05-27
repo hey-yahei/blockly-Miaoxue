@@ -31,6 +31,20 @@ def do_run():
 
     return result
 
+@route("/download_python_file", method="post")
+def download_python_file():
+    code = request.forms.code
+    with open("static/tmp/my_project.py", "w") as f:
+        f.write(code)
+    return ""
+
+@route("/download_xml_file", method="post")
+def download_python_file():
+    code = request.forms.code
+    with open("static/tmp/my_project.xml", "w") as f:
+        f.write(code)
+    return ""
+
 # @route("/get_running_status")
 # def get_running_status():
 #     return str( p.wait(0.1) )
