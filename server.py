@@ -8,7 +8,23 @@ import webbrowser
 import os
 import argparse
 
+# 结束字符串，要跟run.js的定义统一
+END_STRING = '----------- End -----------'
+# 自定义信号模块
+CODE_FLUSH_TIMER = """
+# stdout flush every 0.5s
+import sys
+from threading import Timer
+
+t = Timer(0.5, sys.stdout.flush)
+t.start()
+
+####################################
+
+"""
+
 coding = 'gbk' if platform.system() == "Windows" else 'utf-8'
+running_process = None
 
 if not os.path.exists("tmp"):
     print("create a new directory: tmp")
@@ -24,18 +40,17 @@ def index():
 
 @route("/do_run", method="post")
 def do_run():
-    code = request.forms.code
-    with open("tmp/code2run.py", "w") as f:
-        f.write(code)
-        f.write("\nprint('----------- End -----------')")
-    p = subprocess.Popen('python tmp/code2run.py', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    p.wait()
+    global running_process
 
-    result = ""
-    for out in p.stdout.readlines():
-        result += out.decode(coding)
-
-    return result
+    if running_process == None:
+        code = request.forms.code
+        with open("tmp/code2run.py", "w") as f:
+            f.write(CODE_FLUSH_TIMER)
+            f.write(code)
+        running_process = subprocess.Popen('python tmp/code2run.py', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        return "ok"
+    else:
+        return "fail"
 
 @route("/download_python_file", method="post")
 def download_python_file():
@@ -51,9 +66,29 @@ def download_python_file():
         f.write(code)
     return ""
 
+@route("/get_running_state")
+def get_running_state():
+    global running_process
+
+    if running_process:
+        result = running_process.stdout.readline().decode(coding)
+        if running_process.poll() != None:
+            result += "\n" + END_STRING
+            running_process = None
+        return result.replace("\n", "</br>")
+    else:
+        return ""
+
+@route("/kill_program")
+def kill_program():
+    if running_process:
+        running_process.kill()
+        running_process = None
+    return "ok"
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--no-browser", action="store_true", help="not open browser")
+    parser.add_argument("-nb", "--no-browser", action="store_true", help="not open browser")
     parser.add_argument("-i", "--ip", help="host ip")
     parser.add_argument("-p", "--port", type=int, help="host port")
     parser.add_argument("-d", "--debug", action="store_true", help="open debug swith for bottle")

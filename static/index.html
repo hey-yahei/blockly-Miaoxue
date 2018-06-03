@@ -5,7 +5,9 @@
   <meta name="google" value="notranslate">
   <title>Blockly Demo:</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
   <!-- <script src="js/storage.js"></script> -->
   <script src="js/blockly_compressed.js"></script>
   <script src="js/blocks_compressed.js"></script>       <!-- 原始模块 -->
@@ -52,14 +54,13 @@
                 <input type="file" name="xmlfile" id="xmlfile" onchange="getXml();"/> 
               </form>
               
-
               <button id="trashButton" class="notext" title="...">
                 <img src='/media/1x1.gif' class="trash icon21">
               </button>
               <button id="linkButton" class="notext" title="...">
                 <img src='/media/1x1.gif' class="link icon21">
               </button>
-              <button id="runButton" class="notext primary" title="...">
+              <button id="runButton" class="notext primary" title="..." data-toggle="modal" data-target="#myModal">
                 <img src='/media/1x1.gif' class="run icon21">
               </button>
             </td>
@@ -505,5 +506,21 @@
       </block>
     </category>
   </xml>
+
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" role="document" style="pointer-events: all">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button id="modal-close" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">程序运行中……</h4>
+        </div>
+        <div class="modal-body"><!-- ajax动态加载 --></div>
+        <div class="modal-footer">
+          <button id="modal-kill-program" type="button" class="btn btn-danger">终止程序</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
