@@ -58,7 +58,7 @@ def get_running_state():
     global running_process
 
     if running_process:
-        result = running_process.stdout.readline().decode(coding)
+        result = running_process.stdout.read().decode(coding)
         if running_process.poll() != None:
             result += "\n" + END_STRING
             running_process = None
