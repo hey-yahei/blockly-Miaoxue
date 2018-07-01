@@ -14,7 +14,7 @@ Code.downloadPY = function(){
 
 Code.downloadXML = function(){
     var xml = Blockly.Xml.workspaceToDom(Code.workspace);
-    var text = Blockly.Xml.domToPrettyText(xmlDom);
+    var text = Blockly.Xml.domToPrettyText(xml);
 
     $.post(
         "/download_xml_file",
