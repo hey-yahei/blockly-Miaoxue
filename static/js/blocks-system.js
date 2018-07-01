@@ -31,7 +31,6 @@ Blockly.Blocks['system_sleep'] = {
       ],
       "previousStatement": null,
       "nextStatement": null,
-      "output": null,
       "colour": "%{BKY_SYSTEM_COLOUR}",
       "tooltip": "%{BKY_SYSTEM_SLEEP_TOOLTIP}",
       "helpUrl": ""
