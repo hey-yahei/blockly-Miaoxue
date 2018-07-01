@@ -6,6 +6,7 @@ var KILLED_STRING = '----------- Killed -----------';
 Code.runPY = function(){
     var code = Blockly.Python.workspaceToCode(Code.workspace);
     $("#modal-close").css("display", "none");
+    $("#killProgramButton").attr("disabled", "disabled");
     $(".modal-body").text("正在上传程序…………");
 
     $.post(
@@ -16,6 +17,7 @@ Code.runPY = function(){
         function(result){
             $(".modal-body").append(result + "</br></br>");
             if(result == "ok"){
+                $("#killProgramButton").removeAttr("disabled");
                 timer = setInterval(function(){
                     $.get(
                         "/get_running_state",
@@ -23,6 +25,7 @@ Code.runPY = function(){
                             $(".modal-body").append(result);
                             if(result.indexOf(END_STRING) != -1){
                                 $("#modal-close").css("display", "inline");
+                                $("#killProgramButton").attr("disabled", "disabled");
                                 clearInterval(timer);
                             }
                         }
@@ -40,6 +43,7 @@ Code.killProgram = function(){
             $(".modal-body").append(result);
             $(".modal-body").append(KILLED_STRING);
             $("#modal-close").css("display", "inline");
+            $("#killProgramButton").attr("disabled", "disabled");
             if(timer) clearInterval(timer);
         }
     )
