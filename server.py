@@ -70,7 +70,7 @@ def get_running_state():
 def kill_program():
     global running_process
     if running_process:
-        running_process.kill()
+        running_process.terminate()
         running_process = None
     return "ok"
 
