@@ -10,18 +10,6 @@ import argparse
 
 # 结束字符串，要跟run.js的定义统一
 END_STRING = '----------- End -----------'
-# 自定义信号模块
-CODE_FLUSH_TIMER = """
-# stdout flush every 0.5s
-import sys
-from threading import Timer
-
-t = Timer(0.5, sys.stdout.flush)
-t.start()
-
-####################################
-
-"""
 
 coding = 'gbk' if platform.system() == "Windows" else 'utf-8'
 running_process = None
@@ -45,7 +33,6 @@ def do_run():
     if running_process == None:
         code = request.forms.code
         with open("tmp/code2run.py", "w") as f:
-            f.write(CODE_FLUSH_TIMER)
             f.write(code)
         running_process = subprocess.Popen('python tmp/code2run.py', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         return "ok"
