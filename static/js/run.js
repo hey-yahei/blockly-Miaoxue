@@ -1,5 +1,6 @@
 var timer = null;
 var END_STRING = '----------- End -----------';  // 跟python中的定义统一
+var KILLED_STRING = '----------- Killed -----------';
 
 // code.js中将run按钮的点击事件与Code.runPY绑定
 Code.runPY = function(){
@@ -32,12 +33,13 @@ Code.runPY = function(){
     );
 };
 
-$("#modal-kill-program").click( function(){
+Code.killProgram = function(){
     $.get(
         "/kill_program",
         function(result){
-            $(".modal").modal('hide');
+            $(".modal-body").append(KILLED_STRING);
+            $("#modal-close").css("display", "inline");
             if(timer) clearInterval(timer);
         }
     )
-});
+};

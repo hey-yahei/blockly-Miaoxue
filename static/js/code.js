@@ -402,6 +402,7 @@ Code.init = function() {
   Code.bindClick('downloadPyButton', Code.downloadPY);
   Code.bindClick('downloadXmlButton', Code.downloadXML);
   Code.bindClick('uploadXmlButton', Code.uploadXML);
+  Code.bindClick('killProgramButton', Code.killProgram);
   // Disable the link button if page isn't backed by App Engine storage.
   var linkButton = document.getElementById('linkButton');
   if ('BlocklyStorage' in window) {

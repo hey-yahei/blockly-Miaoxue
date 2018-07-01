@@ -68,6 +68,7 @@ def get_running_state():
 
 @route("/kill_program")
 def kill_program():
+    global running_process
     if running_process:
         running_process.kill()
         running_process = None
