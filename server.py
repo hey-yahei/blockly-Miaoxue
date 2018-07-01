@@ -32,8 +32,8 @@ def do_run():
 
     if running_process == None:
         code = request.forms.code
-        # with open("tmp/code2run.py", "w") as f:
-        #     f.write(code)
+        with open("tmp/code2run.py", "w") as f:
+            f.write(code)
         running_process = subprocess.Popen('python tmp/code2run.py', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         return "ok"
     else:
