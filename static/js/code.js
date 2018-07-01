@@ -471,6 +471,10 @@ Code.initLanguage = function() {
   document.getElementById('linkButton').title = MSG['linkTooltip'];
   document.getElementById('runButton').title = MSG['runTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
+
+  document.getElementById('downloadPyButton').innerText = MSG['downloadPyButton'];
+  document.getElementById('downloadXmlButton').innerText = MSG['downloadXmlButton'];
+  document.getElementById('uploadXmlButton').innerText = MSG['uploadXmlButton'];
 };
 
 /**
