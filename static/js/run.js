@@ -37,6 +37,7 @@ Code.killProgram = function(){
     $.get(
         "/kill_program",
         function(result){
+            $(".modal-body").append(result);
             $(".modal-body").append(KILLED_STRING);
             $("#modal-close").css("display", "inline");
             if(timer) clearInterval(timer);
