@@ -30,7 +30,7 @@ Code.runPY = function(){
                             }
                         }
                     )
-                }, 2000)
+                }, 500)
             }
         }
     );
@@ -40,7 +40,6 @@ Code.killProgram = function(){
     $.get(
         "/kill_program",
         function(result){
-            $(".modal-body").append(result);
             $(".modal-body").append(KILLED_STRING);
             $("#modal-close").css("display", "inline");
             $("#killProgramButton").attr("disabled", "disabled");

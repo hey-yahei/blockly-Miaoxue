@@ -74,9 +74,7 @@ def kill_program():
     if running_process:
         running_process.terminate()
         running_process = None
-        return result
-    else:
-        return ""
+    return "ok"
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
