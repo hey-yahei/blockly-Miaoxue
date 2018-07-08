@@ -90,7 +90,7 @@ def load_states():
         return ""
 
 if __name__ == "__main__":
-    with codecs.open("configure.json", 'r', "utf-8") as f:
+    with codecs.open("conf/configure.json", 'r', "utf-8") as f:
         params = json.load(f)
     if not params['no-browser']:
         webbrowser.open("http://{}:{}".format(params['ip'], params['port']))
