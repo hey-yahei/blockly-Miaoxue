@@ -6,4 +6,6 @@
 *.baiduyun.uploading.cfg
 tmp/*
 static/tmp/*
-
+dist/*
+build/*
+*.spec
