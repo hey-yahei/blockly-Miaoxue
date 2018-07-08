@@ -1,0 +1,13 @@
+{
+    "_comments" : {
+        "ip":           "web服务器监听的ip地址，localhost只允许本地访问，0.0.0.0允许外部访问",
+        "port":         "web服务器监听的端口号",
+        "no-browser":   "自动启动浏览器开关（默认启动）",
+        "debug":        "bottle框架的调试开关（默认不调试）"
+    },
+
+    "ip" : "localhost",
+    "port" : 1234,
+    "no-browser": false,
+    "debug" : false
+}

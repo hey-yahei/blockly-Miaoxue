@@ -6,7 +6,8 @@ import subprocess
 import platform
 import webbrowser
 import os
-import argparse
+import json
+import codecs
 
 # 结束字符串，要跟run.js的定义统一
 END_STRING = '----------- End -----------'
@@ -89,19 +90,8 @@ def load_states():
         return ""
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-nb", "--no-browser", action="store_true", help="not open browser")
-    parser.add_argument("-i", "--ip", help="host ip")
-    parser.add_argument("-p", "--port", type=int, help="host port")
-    parser.add_argument("-d", "--debug", action="store_true", help="open debug swith for bottle")
-
-    args = parser.parse_args()
-    params = {
-        "host" : args.ip or "localhost",
-        "port" : args.port or 1234,
-        "debug" : args.debug
-    }
-
-    if not args.no_browser:
-        webbrowser.open("http://{}:{}".format(params['host'], params['port']))
-    run(**params)
+    with codecs.open("configure.json", 'r', "utf-8") as f:
+        params = json.load(f)
+    if not params['no-browser']:
+        webbrowser.open("http://{}:{}".format(params['ip'], params['port']))
+    run(host=params['ip'], port=params['port'], debug=params['debug'])
