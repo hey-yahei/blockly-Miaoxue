@@ -2,6 +2,9 @@
 基于google的blockly定制，用于python的可视化编程；       
 主要增加pcduino硬件控制相关的模块，借助bottle框架直接运行程序显示结果；     
    
+## Windows平台可执行文件
+\[2018-07-08\] [blockly-Miaoxue_1.0](https://pan.baidu.com/s/17cDkWtFShCRsgzX1HzQzCw)：     
+初次发布，完成基本功能（编辑、运行、保存、加载）。
 
 ## 本地运行       
 **Windows用户**：       
