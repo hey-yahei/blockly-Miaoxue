@@ -11,6 +11,28 @@ import codecs       # codecs.open打开文件时指定编码
 
 # 结束字符串，要跟run.js的定义统一
 END_STRING = '----------- End -----------'
+# 设置文件头（插入心跳线程代码）
+PY_FILE_HEADERS = """\
+#!/usr/bin/python
+#-*- coding: utf-8 -*-
+
+import sys
+from threading import Thread
+from time import sleep
+
+# 心跳线程
+def stdout_flush_thread():
+    while True:
+        print("^_^")
+        sys.stdout.flush()
+        sleep(0.1)
+
+# 创建、开启线程并设置线程主程序为守护进程
+thread_flush = Thread(target=stdout_flush_thread)
+thread_flush.setDaemon(True)
+thread_flush.start()
+
+"""
 
 coding = 'gbk' if platform.system() == "Windows" else 'utf-8'
 running_process = None
@@ -39,7 +61,7 @@ def do_run():
     if running_process == None:
         code = request.forms.code
         with codecs.open("tmp/code2run.py", "w", "utf-8") as f:
-            f.write("#!/usr/bin/python\n#-*- coding: utf-8 -*-\n\n")
+            f.write(PY_FILE_HEADERS)
             f.write(code)
         running_process = subprocess.Popen('python tmp/code2run.py', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         return "ok"
@@ -70,13 +92,16 @@ def get_running_state():
     if running_process:
         result = running_process.stdout.readline().decode(coding)
         all_result += result
+
+        # 如果进程结束，取出剩余的所有结果
         if running_process.poll() != None:
             result += running_process.stdout.read().decode(coding)
             result += "\n" + END_STRING
-            # running_process.terminate()    # Linux下会导致程序堵塞
             running_process = None
             all_result = ""
-        return result
+        
+        # ^_^为心跳，忽略
+        return "" if "^_^" in result else result
     else:
         return ""
 
