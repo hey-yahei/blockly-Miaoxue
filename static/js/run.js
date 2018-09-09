@@ -46,19 +46,24 @@ Code.runPY = function(){
             $("#run-result").append(result + "\n\n");
             if(result == "ok"){
                 $("#killProgramButton").removeAttr("disabled");
+                var lock = false;
                 timer = setInterval(function(){
-                    $.get(
-                        "/get_running_state",
-                        function(result){
-                            $("#run-result").append(result);
-                            if(result.indexOf(END_STRING) != -1){
-                                $("#modal-close").css("display", "inline");
-                                $("#killProgramButton").attr("disabled", "disabled");
-                                clearInterval(timer);
+                    if(!lock){
+                        lock = true;
+                        $.get(
+                            "/get_running_state",
+                            function(result){
+                                $("#run-result").append(result);
+                                if(result.indexOf(END_STRING) != -1){
+                                    $("#modal-close").css("display", "inline");
+                                    $("#killProgramButton").attr("disabled", "disabled");
+                                    clearInterval(timer);
+                                }
+                                lock = false;
                             }
-                        }
-                    )
-                }, 500);
+                        );
+                    }
+                }, 10);
             }
         }
     );
