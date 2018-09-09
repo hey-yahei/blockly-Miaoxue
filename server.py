@@ -73,7 +73,7 @@ def get_running_state():
         if running_process.poll() != None:
             result += running_process.stdout.read().decode(coding)
             result += "\n" + END_STRING
-            running_process.terminate()
+            # running_process.terminate()    # Linux下会导致程序堵塞
             running_process = None
             all_result = ""
         return result
