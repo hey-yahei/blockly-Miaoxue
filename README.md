@@ -31,8 +31,7 @@
     pip install -r requirements.txt
     ```
 
-2. 修改配置文件           
-    编辑 `conf/configure.json` 文件，        
+2. 修改配置文件，编辑 `conf/configure.json` 文件        
     将 `ip` 参数设置为 `"0.0.0.0"`，       
     将 `no-browser` 参数设置为 `true`，    
     其他参数根据需要进行设置。        
