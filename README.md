@@ -31,15 +31,16 @@
     pip install -r requirements.txt
     ```
 
-2. 运行：    
-    ```
-    python server.py
-    ```         
-3. 修改配置文件           
+2. 修改配置文件           
     编辑 `conf/configure.json` 文件，        
     将 `ip` 参数设置为 `"0.0.0.0"`，       
     将 `no-browser` 参数设置为 `true`，    
     其他参数根据需要进行设置。        
+
+3. 运行：    
+    ```
+    python server.py
+    ```         
 
 4. 查看pcduino的ip地址（如果板子开了热点，那么默认是`192.168.100.1`）              
     ```
