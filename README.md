@@ -3,8 +3,12 @@
 主要增加pcduino硬件控制相关的模块，借助bottle框架直接运行程序显示结果；     
    
 ## Windows平台可执行文件
-\[2018-07-08\] [blockly-Miaoxue_1.0](https://pan.baidu.com/s/17cDkWtFShCRsgzX1HzQzCw)：     
-初次发布，完成基本功能（编辑、运行、保存、加载）。
+\[2018-07-08\] ~~blockly-Miaoxue_1.0~~：     
+初次发布，完成基本功能（编辑、运行、保存、加载），有比较麻烦的bug。         
+  
+\[2018-09-09\] [blockly-Miaoxue_1.1](https://pan.baidu.com/s/1pzYR1iBHHM4I1ooaX0LRSg):      
+修复linux下无法正常运行的bug；
+修复无打印死循环程序堵塞的bug。
 
 ## 本地运行       
 **Windows用户**：       
